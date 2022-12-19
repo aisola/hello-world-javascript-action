@@ -1,3 +1,6 @@
+# Node version
+.tool-versions
+
 # Logs
 logs
 *.log
