@@ -1,0 +1,23 @@
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  hello_world:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      # To use a private repo action, the action repo must be checked out
+      - name: Checkout
+        uses: actions@checkout/v3
+      - name: Hello World
+        uses: ./  # Root directory action
+        id: world
+      - name: Get Hello World time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: Hello Abram
+        uses: ./
+        id: abram
+        with:
+          who-to-greet: Abram
+
