@@ -33,7 +33,7 @@ jobs:
         uses: ./  # Root directory action
         id: hello
         with:
-          who-to-greet: ${{ github.event.inputs.name }}
+          who-to-greet: ${{ github.event.inputs.name || 'World' }}
       - name: Get Hello World time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
 
