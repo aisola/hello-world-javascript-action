@@ -1,14 +1,13 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: Hello World
+description: Greet someone and record the time
 inputs:
   who-to-greet:
-    description: 'THe name of the person to greet'
+    description: THe name of the person to greet
     required: true
-    default: 'World'
+    default: World
 outputs:
   time:
-    description: 'The time at which the action greeted the person'
+    description: The time at which the action greeted the person
 runs:
-  using: 'node16'
-  main: 'dist/index.js'
-
+  using: node16
+  main: dist/index.js
