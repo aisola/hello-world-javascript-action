@@ -1,6 +1,8 @@
 name: 'Test'
 
 on:
+  pull_request:
+
   push:
     branches:
       - master
@@ -26,6 +28,7 @@ jobs:
       # To use a private repo action, the action repo must be checked out
       - name: Checkout
         uses: actions/checkout@v3
+      - run: npm ci
       - name: Hello World
         uses: ./  # Root directory action
         id: hello
