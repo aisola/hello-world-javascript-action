@@ -4,7 +4,7 @@
   "description": "Nothing to see here",
   "main": "dist/index.js",
   "scripts": {
-    "build": "npx ncc build ./src/index.js && npx convert-action",
+    "prepare": "npx ncc build src/index.js -o dist --minify && npx convert-action",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
