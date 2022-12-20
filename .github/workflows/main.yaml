@@ -9,7 +9,7 @@ jobs:
     steps:
       # To use a private repo action, the action repo must be checked out
       - name: Checkout
-        uses: actions@checkout/v3
+        uses: actions/checkout@v3
       - name: Hello World
         uses: ./  # Root directory action
         id: world
