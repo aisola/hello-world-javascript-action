@@ -6,7 +6,7 @@
   "scripts": {
     "prepare": "npx ncc build src/index.js -o dist --minify && npx convert-action",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "bpm run prepare"
+    "build": "npm run prepare"
   },
   "repository": {
     "type": "git",
