@@ -1,6 +1,18 @@
+name: 'Test'
+
 on:
   push:
+    branches:
+      - master
+      - main
+      - feature/*
+
   workflow_dispatch:
+    inputs:
+      name:
+        description: 'The name which we should greet.'
+        required: true
+        default: 'World'
 
 jobs:
   hello_world:
@@ -13,11 +25,8 @@ jobs:
       - name: Hello World
         uses: ./  # Root directory action
         id: world
+        with:
+          who-to-greet: ${{ github.event.inputs.name }}
       - name: Get Hello World time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
-      - name: Hello Abram
-        uses: ./
-        id: abram
-        with:
-          who-to-greet: Abram
 
